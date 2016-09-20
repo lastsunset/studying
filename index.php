@@ -241,7 +241,7 @@ a</pre>
 
     $result = 4 && 5;
     echo $result . "\n";
-$result = 2 || 5;             //!!!!!!!!!!!!!!!!!!!!!!!!!!!! pass me a question
+$result = 2 || 5;             //!!!!!!!!!!!!!!!!!!!!!!!!!!! pass me a question
     echo $result;
 
 $result = 1 ^ 4;
