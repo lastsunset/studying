@@ -147,3 +147,34 @@ var_dump($arr) ;
 // массив $arr сейчас таков: array(2, 4, 6, 8)
 unset($value); // разорвать ссылку на последний элемент
 ?>
+
+<?php
+class Test
+{
+    private $foo;
+
+    public function __construct($foo)
+    {
+        $this->foo = $foo;
+    }
+
+    private function bar()
+    {
+        echo 'Доступ к закрытому методу.';
+    }
+
+    public function baz(Test $other)
+    {
+        // Мы можем изменить закрытое свойство:
+        $other->foo = 'hello';
+        var_dump($other->foo);
+
+        // Мы также можем вызвать закрытый метод:
+        $other->bar();
+    }
+}
+
+$test = new Test('test');
+
+$test->baz(new Test('other'));
+?>
