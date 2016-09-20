@@ -135,6 +135,7 @@ $class->myFunc();
     echo "<br>";
 }
 ?>
+<pre>
 <?php
 $arr = [1, 2, 3, 4];
 
@@ -143,7 +144,12 @@ foreach ($arr as &$value) {
     $value = $value * 2;
 }
 var_dump($arr) ;
+echo "<br>";
 
+echo count($arr);
+echo "<br>";
+
+var_dump($arr);
 // массив $arr сейчас таков: array(2, 4, 6, 8)
 unset($value); // разорвать ссылку на последний элемент
 ?>
