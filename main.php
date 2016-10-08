@@ -126,25 +126,57 @@ $class = new OtherClass();
 $class->myFunc();
 ?>
 <?php
-    $nana = ['1','2'];
-    for ($n = 0; $n < 5; $n++){
-        if (!($n % 2)) echo "\n";
-    for ($i = 0; $i <3; $i++){
-        echo '# ';
+    $nana = array( array("puk" => "tik",'2','3','4'),
+                    array('na','ta','pu'),
+                    array('a','nu','ga'));
+    for ($n = 0; $n < 3; $n++){ //kol-vo strok
+     //   if (!($n % 2)) echo "\n";
+    for ($i = 0; $i < 3; $i++){ //kol-vo stilbcov
+
+        echo $nana[$n][$i];
     }
-    echo "<br>";
+        echo "<br>";
+}  echo "<br>";
+echo $nana [0]['puk'];
+?>
+<?php
+function nums ($n1, $n2, &$sub, &$mult, &$div){
+    $sub = $n1 - $n2;
+    $mult = $n1 * $n2;
+    $div = $n1 / $n2;
+    return $n1 + $n2;
 }
+
+$nums = nums(2, 4, $a, $b, $c);
+echo $nums; //6
+echo $a; //-2
+
+
+
 ?>
 <pre>
 <?php
 $arr = [1, 2, 3, 4];
+$arr[6] = 2;
+//$arr = array(8 => 2);
 
-var_dump($arr) ;
+unset($arr[6]);
+var_dump($arr);
 foreach ($arr as &$value) {
     $value = $value * 2;
+    //if (!($value % 2)) echo "<br>";
+    foreach ($arr as &$tata) {
+        $tata = $tata *3;
+    }
 }
 var_dump($arr) ;
 echo "<br>";
+
+$arr[3] = 3;
+$arr[4] = array(
+        7 => true,
+        "pass" => "1234"
+);
 
 echo count($arr);
 echo "<br>";
@@ -184,3 +216,87 @@ $test = new Test('test');
 
 $test->baz(new Test('other'));
 ?>
+<br>
+<?php
+function zema (){
+    return array(1,2,3,4);
+}
+$o = 2;
+$oo = 5;
+$ooo = 9;
+list($o, $oo, $ooo) = zema();
+$zema = zema;
+var_dump("$zema");
+?>
+
+<?php
+    for ($i=0;$i<=10;$i++){
+      if(!($i % 2))
+      {
+           continue;
+       }
+
+        echo $i."<br>";
+    }
+
+$str = 'Pesun';
+$i = 0;
+$len = strlen($str);
+
+while ($i < $len){
+    echo $str{$i}.'<br>';
+    $i++;
+}
+
+
+$arr = ['a'=>'one', 'b'=>'two', 'c'=>'three'];
+foreach ($arr as $key => $var){
+    print_r("$key: $var\n");
+}
+unset($arr);
+
+$arr = [1, 2, 3];
+
+foreach ($arr as &$sonya) {
+    $sonya = $sonya * 2;
+}
+print_r($sonya);
+echo "<br>";
+print_r($arr);
+?>
+/****************************************/
+<?php
+    function nana(){
+    echo "<h1>Hello!</h1>";
+    }
+
+    nana();
+
+if(function_exists("nana")){
+    echo '1';}
+    else{
+        echo '2';
+}
+?>
+@media all and (orientation:portrait) and (min-color-index: 256) {}
+    @media all and (min-color-index: 256) {
+ ...
+}
+    <?php
+    function FunctionArray($count)
+{
+    var $arr = [];
+    for (var $i = 0; i &$lt; $count; i++) {
+        $arr[$i] = function() { alert($i) };
+    }
+    return arr;
+}
+
+var $i=100;
+var $arr = FunctionArray($i);
+
+//Проверка
+echo $arr[0]();
+
+
+
