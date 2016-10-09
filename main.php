@@ -297,6 +297,10 @@ var $arr = FunctionArray($i);
 
 //Проверка
 echo $arr[0]();
+?>
+    <script>
+
+        </script>
 
 
 

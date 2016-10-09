@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+<script>
+//###############
+    function pow(x) {
+        var numb = x--;
+        for (var n = 1;n <= x;n++){
+
+            numb += n;
+        }
+        return numb;
+    }
+
+ var ups = +prompt('enter stage: ','');
+alert(pow(ups));
+//###############
+/*    function factor (x){
+     if (x != 1){
+      return   x*factor(x-1);
+
+     }
+        else {
+            return 1;
+     }
+    }
+alert(factor(5));*/
+/*function fib(n) {
+
+    if (n <= 1){
+        return    n;
+    }
+    else {
+        return fib(n - 1) + fib (n -2);
+    }
+}
+
+
+alert( fib(3) ); // 2
+alert( fib(7) ); // 13 7-1+6-2+4-1
+alert( fib(7)); // 5527939700884757*/
+</script>
+</body>
+
+</html>
